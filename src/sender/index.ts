@@ -1,1 +1,3 @@
-console.log("CEDTP Sender initialized");
+import { connectToReceiver } from "./client";
+
+connectToReceiver();
