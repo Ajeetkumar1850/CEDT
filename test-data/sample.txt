@@ -1,0 +1,5 @@
+This is a sample test file for CEDTP protocol.
+It contains multiple lines to test the chunk reading functionality.
+The file streaming system should read this file in chunks without loading it entirely into memory.
+This approach is critical for handling large files efficiently.
+CEDTP uses AES-256-GCM encryption for secure data transfer.
