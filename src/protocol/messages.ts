@@ -3,7 +3,10 @@ export enum MessageType {
   HELLO_ACK = "HELLO_ACK",
   KEY_EXCHANGE = "KEY_EXCHANGE",
   KEY_EXCHANGE_ACK = "KEY_EXCHANGE_ACK",
-  DATA = "DATA"
+  DATA = "DATA",
+  ACK = "ACK",
+  NACK = "NACK",
+  END = "END"
 }
 
 export interface HelloMessage {
@@ -35,4 +38,20 @@ export interface EncryptedDataMessage {
   iv: string;
   ciphertext: string;
   authTag: string;
+}
+
+export interface AckMessage {
+  type: MessageType.ACK;
+  chunkIndex: number;
+}
+
+export interface NackMessage {
+  type: MessageType.NACK;
+  chunkIndex: number;
+  reason: string;
+}
+
+export interface EndMessage {
+  type: MessageType.END;
+  totalChunks: number;
 }
