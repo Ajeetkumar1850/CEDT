@@ -6,13 +6,22 @@
   "scripts": {
     "build": "tsc",
     "sender": "ts-node src/sender/index.ts",
-    "receiver": "ts-node src/receiver/index.ts"
+    "receiver": "ts-node src/receiver/index.ts",
+    "api": "ts-node src/api/server.ts",
+    "dev": "concurrently \"npm run api\" \"npm run receiver\" \"cd frontend && npm start\""
   },
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.x",
+    "@types/node": "^20.x",
     "ts-node": "^10.x",
-    "@types/node": "^20.x"
+    "typescript": "^5.x"
+  },
+  "dependencies": {
+    "@pinecone-database/pinecone": "^7.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.1.5"
   }
 }
