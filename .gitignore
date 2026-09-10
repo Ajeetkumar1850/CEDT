@@ -2,3 +2,16 @@ node_modules/
 dist/
 .env
 received/
+
+# Demo and interview files (not needed in repo)
+DEMO-GUIDE.md
+INTERVIEW-*.md
+INTERVIEW-*.txt
+CHEAT-SHEET.txt
+START-HERE-FOR-INTERVIEW.md
+README-DEMO.md
+PROJECT_STATUS_REPORT.md
+START-DEMO.bat
+QUICK-TEST.bat
+test-project.js
+ml/__pycache__/

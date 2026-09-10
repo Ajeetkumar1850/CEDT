@@ -81,3 +81,8 @@ export async function startAPIServer() {
     process.exit(1);
   }
 }
+
+// Start server if running directly
+if (require.main === module) {
+  startAPIServer();
+}

@@ -6,7 +6,7 @@ const PINECONE_API_KEY = process.env.PINECONE_API_KEY || '';
 const PINECONE_INDEX = process.env.PINECONE_INDEX || 'malware-signatures';
 
 export class PineconeService {
-  private pinecone: Pinecone;
+  private pinecone: Pinecone | null = null;
   private index: any;
   
   constructor() {
@@ -22,6 +22,10 @@ export class PineconeService {
   
   async initialize() {
     try {
+      if (!this.pinecone) {
+        logger.warn('Pinecone not initialized, skipping index setup');
+        return;
+      }
       this.index = this.pinecone.index(PINECONE_INDEX);
       logger.info('Pinecone initialized successfully');
     } catch (error) {

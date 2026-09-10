@@ -13,7 +13,9 @@
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.x",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.19.43",
     "ts-node": "^10.x",
     "typescript": "^5.x"
   },
